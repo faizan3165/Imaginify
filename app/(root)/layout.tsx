@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 
+import Sidebar from "@/components/shared/Sidebar";
+import MobileNav from "@/components/shared/MobileNav";
+
 import "../globals.css";
 
 export const metadata: Metadata = {
@@ -14,11 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <main className="root">
-      {/* sidebar */}
+      <Sidebar />
 
-      {/* mobile nav */}
+      <MobileNav />
 
-      
       <div className="root-container">
         <div className="wrapper">{children}</div>
       </div>
