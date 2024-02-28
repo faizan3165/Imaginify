@@ -5,6 +5,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
+import MediaUploader from "./MediaUploader";
 import { CustomField } from "@/components/shared/CustomField";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -192,7 +193,7 @@ const TransformationForm = ({
                     value={field.value}
                     className="input-field"
                     onChange={(e) =>
-                      onHandleInputChange(
+                      onInputChangeHandler(
                         "color",
                         e.target.value,
                         "recolor",
@@ -205,6 +206,23 @@ const TransformationForm = ({
             )}
           </div>
         )}
+
+        <div className="media-uploader-field">
+          <CustomField
+            control={form.control}
+            name="publicId"
+            className="flex size-full flex-col"
+            render={({ field }) => (
+              <MediaUploader
+                onValueChange={field.onChange}
+                setImage={setImage}
+                publicId={field.value}
+                image={image}
+                type={type}
+              />
+            )}
+          />
+        </div>
 
         <div className="flex flex-col gap-4">
           <Button

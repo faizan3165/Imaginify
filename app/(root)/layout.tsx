@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import Sidebar from "@/components/shared/Sidebar";
 import MobileNav from "@/components/shared/MobileNav";
+import { Toaster } from "@/components/ui/toaster";
 
 import "../globals.css";
 
@@ -24,6 +25,8 @@ export default function RootLayout({
       <div className="root-container">
         <div className="wrapper">{children}</div>
       </div>
+
+      <Toaster />
     </main>
   );
 }
