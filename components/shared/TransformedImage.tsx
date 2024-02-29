@@ -43,14 +43,14 @@ const TransformedImage = ({
               alt="Download"
               width={24}
               height={24}
-              className="pb-[6px]"
+              className="pb-[6px] "
             />
           </button>
         )}
       </div>
 
       {image?.publicId && transformationConfig ? (
-        <div className="relative">
+        <div>
           <CldImage
             width={getImageSize(type, image, "width")}
             height={getImageSize(type, image, "height")}
